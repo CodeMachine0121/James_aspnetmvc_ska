@@ -23,14 +23,20 @@ public class AccountController : Controller
         return View();
     }
     
+    [HttpPost]
     [Route("Save")]
     public IActionResult Save(string Remark, int Amount, DateTime CreateTime)
     {
-        _myService.AddData(new AccountModel
+        if (!ModelState.IsValid)
+        {
+            ViewData["dataList"] = _myService.GetData();
+            return View("Index");
+        }
+        
+        ViewData["dataList"]=_myService.AddData(new AccountModel
         {
             Remark = Remark, Amount = Amount, CreateTime = CreateTime
         });
-        ViewData["dataList"] = _myService.GetData();
         return View("Index");
     }
 }

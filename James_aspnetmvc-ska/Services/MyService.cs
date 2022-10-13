@@ -1,5 +1,7 @@
 ﻿using System.Text.Json;
 using James_aspnetmvc_ska.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 namespace James_aspnetmvc_ska.Services;
 public class MyService
 {

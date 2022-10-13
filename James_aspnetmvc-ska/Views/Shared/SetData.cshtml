@@ -1,10 +1,22 @@
 ﻿@model James_aspnetmvc_ska.Models.AccountModel 
 
-<div class="setData">
+
+<div class="setData text-center" xmlns="http://www.w3.org/1999/html">
     <form asp-controller="Account" asp-action="Save" method="post">
         @Html.TextBoxFor(x => x.Remark)
+        <!--@Html.ValidationMessageFor(x=>x.Remark)-->
+        
+        <br/>
+        
         @Html.TextBoxFor(x => x.Amount)
-        @Html.TextBoxFor(x => x.CreateTime)
+        <!-- <span asp-validation-for="Amount"></span>-->
+        <br/>
+        
+        <input asp-for="CreateTime"/>
+        <!--<span asp-validation-for="CreateTime"></span>-->
+        <br/>
+        
         <button>submit</button>
+        <div asp-validation-summary="All" style="border-width:5px; padding-top: 2px;"></div>
     </form>
 </div>
