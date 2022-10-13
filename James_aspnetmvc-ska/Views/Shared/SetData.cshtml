@@ -1,0 +1,10 @@
+﻿@model James_aspnetmvc_ska.Models.AccountModel 
+
+<div class="setData">
+    <form asp-controller="Account" asp-action="Save" method="post">
+        @Html.TextBoxFor(x => x.Remark)
+        @Html.TextBoxFor(x => x.Amount)
+        @Html.TextBoxFor(x => x.CreateTime)
+        <button>submit</button>
+    </form>
+</div>

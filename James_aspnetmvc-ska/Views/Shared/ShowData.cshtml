@@ -1,0 +1,30 @@
+﻿@{
+    List<AccountModel> dataList = (List<AccountModel>) @ViewData["dataList"];
+}
+<style>
+    table, th, td{
+       border: 1px solid black;    
+       margin: auto; 
+    }
+    .dataList {
+        padding-top: 10px;
+    }
+</style>
+<div class="dataList">
+    <table>
+        <tr>
+            <th>Remark</th>
+            <th>Amount</th>
+            <th>DateTime</th>
+        </tr>
+        @foreach (var data in @dataList)
+        {
+            <tr>
+                <td>@data.Remark</td>
+                <td>@data.Amount</td>
+                <td>@data.CreateTime</td>
+            </tr>
+        }
+
+    </table>
+</div>

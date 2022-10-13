@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "James_aspnetmvc-ska", "James_aspnetmvc-ska\James_aspnetmvc-ska.csproj", "{36C120CF-A8F2-47D9-8488-7719A3928302}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36C120CF-A8F2-47D9-8488-7719A3928302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C120CF-A8F2-47D9-8488-7719A3928302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C120CF-A8F2-47D9-8488-7719A3928302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C120CF-A8F2-47D9-8488-7719A3928302}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
