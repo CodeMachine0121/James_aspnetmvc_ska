@@ -39,4 +39,12 @@ public class AccountController : Controller
         });
         return View("Index");
     }
+
+    [HttpGet]
+    [Route("api/[action]")]
+    public ActionResult getData()
+    {
+        string data = _myService.GetDataString();
+        return Content(data);
+    }
 }
