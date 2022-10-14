@@ -41,7 +41,7 @@ public class AccountController : Controller
     }
 
     [HttpGet]
-    [Route("api/[action]")]
+    [Route("api/records")]
     public ActionResult getData()
     {
         string data = _myService.GetDataString();
