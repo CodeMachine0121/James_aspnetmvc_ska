@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 var builder = WebApplication.CreateBuilder(args);
 // Add DI Service
 {
-    builder.Services.AddTransient<MyService>();
+    builder.Services.AddSingleton<MyService>();
 }
 
 // Add services to the container.

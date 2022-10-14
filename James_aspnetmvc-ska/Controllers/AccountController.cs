@@ -35,7 +35,7 @@ public class AccountController : Controller
         
         ViewData["dataList"]=_myService.AddData(new AccountModel
         {
-            Remark = Remark, Amount = Amount, CreateTime = CreateTime
+            Remark = Remark, Amount = Amount, CreateTime = CreateTime.ToString("MM/dd/yyyy")
         });
         return View("Index");
     }
