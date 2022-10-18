@@ -1,21 +1,18 @@
-﻿@model James_aspnetmvc_ska.Models.AccountModel 
-
+﻿@model AccountModel
 
 <div class="setData text-center" xmlns="http://www.w3.org/1999/html">
     <form asp-controller="Account" asp-action="Save" method="post">
         項目
         @Html.TextBoxFor(x => x.Remark)
-        <!--@Html.ValidationMessageFor(x => x.Remark)-->
         <br/>
 
         金額
-        @Html.TextBoxFor(x => x.Amount)
-        <!-- <span asp-validation-for="Amount"></span>-->
+        <input asp-for="Amount" data-val="true" />
+        <span asp-validation-for="Remark"></span>
         <br/>
 
         日期
-        <input asp-for="CreateTime"/>
-        <!--<span asp-validation-for="CreateTime"></span>-->
+        <input asp-for="CreateTime" value=""/>
         <br/>
 
         <button>submit</button>

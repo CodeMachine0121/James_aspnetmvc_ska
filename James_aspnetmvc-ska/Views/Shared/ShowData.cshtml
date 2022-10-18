@@ -1,6 +1,4 @@
-﻿@{
-    List<AccountModel> dataList = (List<AccountModel>) @ViewData["dataList"];
-}
+﻿@model ViewAccountModel;
 <style>
     table, th, td{
        border: 1px solid black;    
@@ -17,7 +15,8 @@
             <th>Amount</th>
             <th>DateTime</th>
         </tr>
-        @foreach (var data in @dataList)
+        
+        @foreach (var data in @Model.AccountModels)
         {
             <tr>
                 <td>@data.Remark</td>

@@ -1,3 +1,4 @@
+using James_aspnetmvc_ska.Models;
 using James_aspnetmvc_ska.Services;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add DI Service
 {
     builder.Services.AddSingleton<MyService>();
+    builder.Services.AddSingleton<ViewAccountModel>();
 }
 
 // Add services to the container.
