@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net.Mime;
+using Microsoft.AspNetCore.Mvc;
 using James_aspnetmvc_ska.Models;
 using James_aspnetmvc_ska.Services;
 
@@ -22,7 +23,7 @@ public class AccountController : Controller
         ViewData["dataList"] = _myService.GetData();
         return View();
     }
-    
+
     [HttpPost]
     [Route("Save")]
     public IActionResult Save(string Remark, int Amount, DateTime CreateTime)
@@ -32,19 +33,21 @@ public class AccountController : Controller
             ViewData["dataList"] = _myService.GetData();
             return View("Index");
         }
-        
-        ViewData["dataList"]=_myService.AddData(new AccountModel
+
+        ViewData["dataList"] = _myService.AddData(new AccountModel
         {
             Remark = Remark, Amount = Amount, CreateTime = CreateTime.ToString("MM/dd/yyyy")
         });
+
         return View("Index");
     }
 
     [HttpGet]
-    [Route("api/records")]
-    public ActionResult getData()
+    [Route("~/api/records")]
+    public IActionResult getData()
     {
-        string data = _myService.GetDataString();
-        return Content(data);
+        var jsonData = _myService.GetDataString();
+        ViewBag.records = jsonData;
+        return View("records");
     }
 }
