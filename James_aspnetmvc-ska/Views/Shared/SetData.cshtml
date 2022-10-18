@@ -4,18 +4,20 @@
     <form asp-controller="Account" asp-action="Save" method="post">
         項目
         @Html.TextBoxFor(x => x.Remark)
+        <p style="margin-left: 3px;">@Html.ValidationMessageFor(x=>x.Remark)</p>
         <br/>
 
         金額
         <input asp-for="Amount" data-val="true" />
-        <span asp-validation-for="Remark"></span>
+        <p style="margin-left: 3px;">@Html.ValidationMessageFor(x=>x.Amount)</p>
         <br/>
 
         日期
         <input asp-for="CreateTime" value=""/>
+        <p style="margin-left: 3px;">@Html.ValidationMessageFor(x=>x.CreateTime)</p>
         <br/>
 
         <button>submit</button>
-        <div asp-validation-summary="All" style="border-width:5px; padding-top: 2px;"></div>
+        @Html.ValidationSummary()
     </form>
 </div>

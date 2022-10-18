@@ -8,8 +8,9 @@ namespace James_aspnetmvc_ska.Models;
 public class AccountModel
 
 {
-    [BindRequired]
-    [Range(0,100)]
+    [DefaultValue(null)]
+    [Required(ErrorMessage = "Necessary data!")]
+    [Range(0,100, ErrorMessage = "Range only from 0 to 100")]
     public int Amount { get; set; }
     
     [DefaultValue(null)]

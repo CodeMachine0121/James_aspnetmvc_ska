@@ -31,7 +31,7 @@ public class AccountController : Controller
     [Route("Save")]
     public IActionResult Save(string Remark, int Amount, DateTime CreateTime)
     {
-        var status = ModelState.IsValid;
+        var status = ModelState.IsValid && Amount<=100 && Amount>0;
         if (status)
         {
             //ViewData["dataList"] = _myService.GetData();
@@ -41,7 +41,9 @@ public class AccountController : Controller
             });
 
         }
-
+        else
+            ModelState.AddModelError("","Input Data Error");
+        
         return View("Index",_viewAccountModel);
     }
 
