@@ -1,16 +1,13 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 namespace James_aspnetmvc_ska.Models;
 
-public class AccountModel
+public class AccountModel:ValidationAttribute
 
 {
-    [DefaultValue(null)]
-    [Required(ErrorMessage = "Necessary data!")]
-    [Range(0,100, ErrorMessage = "Range only from 0 to 100")]
+    [Range(0,10)]
     public int Amount { get; set; }
     
     [DefaultValue(null)]

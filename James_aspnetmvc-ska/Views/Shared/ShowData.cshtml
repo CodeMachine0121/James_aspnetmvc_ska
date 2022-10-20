@@ -1,4 +1,5 @@
-﻿@model ViewAccountModel;
+﻿@model List<AccountModel>;
+
 <style>
     table, th, td{
        border: 1px solid black;    
@@ -16,7 +17,7 @@
             <th>DateTime</th>
         </tr>
         
-        @foreach (var data in @Model.AccountModels)
+        @foreach (var data in @Model)
         {
             <tr>
                 <td>@data.Remark</td>

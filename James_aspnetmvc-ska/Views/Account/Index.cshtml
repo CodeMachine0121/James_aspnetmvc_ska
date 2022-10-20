@@ -1,11 +1,9 @@
-﻿@model ViewAccountModel;
-@{
-    var accountModel = new AccountModel();
-}
+﻿@model IndexViewModel;
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    @Html.Partial("SetData",accountModel)
-    <partial name="ShowData" model="@Model"/>
+    <partial name="SetData" model="@Model.AccountModel"/>
+    <partial name="ShowData" model="@Model.AccountModels"/>
+    
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

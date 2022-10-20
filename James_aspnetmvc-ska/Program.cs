@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add DI Service
 {
     builder.Services.AddSingleton<MyService>();
-    builder.Services.AddSingleton<ViewAccountModel>();
+    builder.Services.AddSingleton<IndexViewModel>();
 }
 
 // Add services to the container.

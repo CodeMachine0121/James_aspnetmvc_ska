@@ -9,12 +9,12 @@ namespace James_aspnetmvc_ska.Controllers;
 public class AccountController : Controller
 {
     private readonly MyService _myService;
-    private readonly ViewAccountModel _viewAccountModel;
+    private readonly IndexViewModel _indexViewModel;
 
-    public AccountController(MyService myService, ViewAccountModel viewAccountModel)
+    public AccountController(MyService myService, IndexViewModel indexViewModel)
     {
         _myService = myService;
-        _viewAccountModel = viewAccountModel;
+        _indexViewModel = indexViewModel;
     }
 
 
@@ -23,28 +23,25 @@ public class AccountController : Controller
     public IActionResult Index()
     {
         //ViewData["dataList"] = _myService.GetData();
-        _viewAccountModel.AccountModels = _myService.GetData();
-        return View(_viewAccountModel);
+        _indexViewModel.AccountModels = _myService.GetData();
+        return View(_indexViewModel);
     }
 
     [HttpPost]
     [Route("Save")]
-    public IActionResult Save(string Remark, int Amount, DateTime CreateTime)
+    public IActionResult Save(AccountModel accountModel)
     {
-        var status = ModelState.IsValid && Amount<=100 && Amount>0;
+        var status = ModelState.IsValid;
         if (status)
         {
             //ViewData["dataList"] = _myService.GetData();
-            _viewAccountModel.AccountModels= _myService.AddData(new AccountModel
-            {
-                Remark = Remark, Amount = Amount, CreateTime = CreateTime.ToString("MM/dd/yyyy")
-            });
+            _indexViewModel.AccountModels = _myService.AddData(accountModel);
 
         }
         else
             ModelState.AddModelError("","Input Data Error");
         
-        return View("Index",_viewAccountModel);
+        return View("Index", _indexViewModel);
     }
 
     [HttpGet]
